@@ -3,15 +3,15 @@
 
   inputs.nix.url = "nix";
 
-  # inputs.grandchild.url = "/Volumes/Projects/Flox/tests/flakes/grandchild";
+  inputs.grandchild.url = "/Volumes/Projects/Flox/tests/flakes/grandchild";
   # inputs.grandchild.inputs.capacitor.follows = "capacitor";
   
 
 
-  outputs = { self, nixpkgs, capacitor, ... }: {
+  outputs = { self, nixpkgs, grandchild, capacitor, ... }: {
 
     lib.test = capacitor.lib.capacitor;
-    # lib.test2 = grandchild.lib.grandchild;
+    lib.test2 = grandchild.lib.grandchild;
 
   };
 }
